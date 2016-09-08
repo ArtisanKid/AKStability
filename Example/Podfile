@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AKStability_Example' do
+  pod 'AKStability', :path => '../'
+
+  target 'AKStability_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
