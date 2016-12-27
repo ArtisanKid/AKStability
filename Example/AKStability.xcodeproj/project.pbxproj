@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5228DF1E0E1EF200008267 /* A.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5228DE1E0E1EF200008267 /* A.m */; };
+		1D5228E21E0E1F0C00008267 /* B.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5228E11E0E1F0C00008267 /* B.m */; };
 		5358FE75443E437A88A1B34D /* Pods_AKStability_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2677716FCAB1B046898138FE /* Pods_AKStability_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +40,10 @@
 /* Begin PBXFileReference section */
 		03FAFBEF3292A5B4796D27B9 /* Pods-AKStability_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKStability_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKStability_Example/Pods-AKStability_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1A843FF6E0E6101D15EC0756 /* Pods-AKStability_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKStability_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKStability_Example/Pods-AKStability_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1D5228DD1E0E1EF200008267 /* A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A.h; sourceTree = "<group>"; };
+		1D5228DE1E0E1EF200008267 /* A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A.m; sourceTree = "<group>"; };
+		1D5228E01E0E1F0C00008267 /* B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B.h; sourceTree = "<group>"; };
+		1D5228E11E0E1F0C00008267 /* B.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = B.m; sourceTree = "<group>"; };
 		2677716FCAB1B046898138FE /* Pods_AKStability_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKStability_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C675C1BE29ED854334C780 /* AKStability.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AKStability.podspec; path = ../AKStability.podspec; sourceTree = "<group>"; };
 		428422C4723B94FD5EEF8343 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -137,6 +143,10 @@
 				6003F5A6195388D20070C39A /* AKViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				1D5228DD1E0E1EF200008267 /* A.h */,
+				1D5228DE1E0E1EF200008267 /* A.m */,
+				1D5228E01E0E1F0C00008267 /* B.h */,
+				1D5228E11E0E1F0C00008267 /* B.m */,
 			);
 			name = "Example for AKStability";
 			path = AKStability;
@@ -244,7 +254,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AK;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Freud;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -391,8 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* AKAppDelegate.m in Sources */,
+				1D5228E21E0E1F0C00008267 /* B.m in Sources */,
 				6003F5A7195388D20070C39A /* AKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1D5228DF1E0E1EF200008267 /* A.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,14 +459,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -487,13 +504,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
