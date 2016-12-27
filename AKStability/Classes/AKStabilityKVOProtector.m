@@ -13,7 +13,7 @@
 @interface AKStabilityKVOProtector ()
 
 //{observer:{target:{keyPath:count}}}
-@property (nonatomic, strong) NSMapTable<id, NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *> *kvoMapTable;
+@property (nonatomic, strong) NSMapTable<id, NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *> *KVOMapTable;
 
 @end
 
@@ -25,7 +25,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         protector = [[super allocWithZone:NULL] init];
-        protector.kvoMapTable = [NSMapTable strongToStrongObjectsMapTable];
+        protector.KVOMapTable = [NSMapTable strongToStrongObjectsMapTable];
     });
     return protector;
 }
@@ -59,7 +59,7 @@
         return;
     }
     
-    NSMapTable<NSString *, NSNumber *> *keyPathMapTable = [[self.kvoMapTable AKStability_observersForTarget:target] AKStability_keyPathsForObserver:observer];
+    NSMapTable<NSString *, NSNumber *> *keyPathMapTable = [[self.KVOMapTable AKStability_observersForTarget:target] AKStability_keyPathsForObserver:observer];
     NSUInteger observeTimes = [[keyPathMapTable objectForKey:keyPath] unsignedLongValue];
     observeTimes++;
     [keyPathMapTable setObject:@(observeTimes) forKey:keyPath];
@@ -78,7 +78,7 @@
         return;
     }
     
-    NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *observerMapTable = [self.kvoMapTable AKStability_observersForTarget:target];
+    NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *observerMapTable = [self.KVOMapTable AKStability_observersForTarget:target];
     NSMapTable<NSString *, NSNumber *> *keyPathMapTable = [observerMapTable AKStability_keyPathsForObserver:observer];
     NSUInteger observeTimes = [[keyPathMapTable objectForKey:keyPath] unsignedLongValue];
     observeTimes--;
@@ -87,7 +87,7 @@
         if(!keyPathMapTable.count) {
             [observerMapTable removeObjectForKey:observer];
             if(!observerMapTable.count) {
-                [self.kvoMapTable removeObjectForKey:target];
+                [self.KVOMapTable removeObjectForKey:target];
                 return;
             }
             return;
@@ -98,7 +98,7 @@
 }
 
 - (NSString *)kvoRelations {
-    return self.kvoMapTable.description;
+    return self.KVOMapTable.description;
 }
 
 @end
