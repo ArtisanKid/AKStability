@@ -46,6 +46,7 @@
     return self;
 }
 
+#pragma mark - Public Method
 - (void)bindTarget:(id)target observer:(id)observer keyPath:(NSString *)keyPath {
     if(!target) {
         return;

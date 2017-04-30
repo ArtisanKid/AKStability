@@ -10,6 +10,13 @@
 
 @interface NSMapTable (AKStability)
 
+
+/**
+ 获取目标对象的所有观察者
+
+ @param target 目标对象
+ @return 观察者字典
+ */
 - (NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *)AKStability_observersForTarget:(id)target;
 - (NSMapTable<NSString *, NSNumber *> *)AKStability_keyPathsForObserver:(id)observer;
 

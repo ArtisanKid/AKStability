@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AKStabilityKVOProtector : NSObject
 
 #pragma mark- Singleton Method
@@ -21,3 +23,5 @@
 - (NSString *)KVORelations;
 
 @end
+
+NS_ASSUME_NONNULL_END

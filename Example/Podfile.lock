@@ -1,16 +1,18 @@
 PODS:
-  - AKStability (0.1.0)
+  - AKStability (0.1.0):
+    - AKStability/Swift (= 0.1.0)
+  - AKStability/Swift (0.1.0)
 
 DEPENDENCIES:
   - AKStability (from `../`)
 
 EXTERNAL SOURCES:
   AKStability:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  AKStability: be330e389b8ccb7b6d0cf7b5931ed6e9e9cdc9be
+  AKStability: ab6465de437bb8528f4ffd7e69205b56af5aded0
 
 PODFILE CHECKSUM: 9e7cc49827b2a68865bd58bfdaec4ce57df729c7
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
