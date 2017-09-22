@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef SJBPrivateDeclare_h
-#define SJBPrivateDeclare_h
+#ifndef SJBPrivateDeclares_h
+#define SJBPrivateDeclares_h
 
 /**
  *  Benchmarking（用于测量效率的一段代码）
@@ -20,4 +20,4 @@
  */
 extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
 
-#endif /* SJBPrivateDeclare_h */
+#endif /* SJBPrivateDeclares_h */

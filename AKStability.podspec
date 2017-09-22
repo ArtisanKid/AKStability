@@ -30,18 +30,24 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AKStability/Classes/*'
+  s.source_files = 'AKStability/Classes/**/*'
 
   # s.resource_bundles = {
   #   'AKStability' => ['AKStability/Assets/*.png']
   # }
 
+  s.preserve_paths = 'AKStability/Classes/**/*.{txt,md,doc,docx,pdf}'
+
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
+  s.subspec 'ObjectiveC' do |oc|
+    oc.source_files = 'AKStability/Classes/*.{c,h,m,mm}'
+  end
+
   s.subspec 'Swift' do |sw|
-    sw.ios.source_files = 'AKStability/Classes/Swift/*'
+    sw.source_files = 'AKStability/Classes/Swift/*'
   end
 
 end

@@ -83,11 +83,11 @@ static __attribute__((constructor)) void AKStability_hookObjectKVO() {
         NSMapTable *observerMapTable = [AKStabilityKVOProtector.protector.KVOMapTable objectForKey:self];
         id observer = nil;
         NSEnumerator *observerEnumerator = [observerMapTable keyEnumerator];
-        while(observer = observerEnumerator.nextObject) {
+        while((observer = observerEnumerator.nextObject)) {
             NSMapTable *keyPathMapTable = [observerMapTable objectForKey:observer];
             NSString *keyPath = nil;
             NSEnumerator *keyPathEnumerator = [keyPathMapTable keyEnumerator];
-            while (keyPath = keyPathEnumerator.nextObject) {
+            while ((keyPath = keyPathEnumerator.nextObject)) {
                 NSNumber *times = [keyPathMapTable objectForKey:keyPath];
                 for(NSUInteger i = 0; i < times.integerValue; i++) {
                     dispatch_async(dispatch_get_main_queue(), ^{

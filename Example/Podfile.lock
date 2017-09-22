@@ -1,6 +1,8 @@
 PODS:
   - AKStability (0.1.0):
+    - AKStability/ObjectiveC (= 0.1.0)
     - AKStability/Swift (= 0.1.0)
+  - AKStability/ObjectiveC (0.1.0)
   - AKStability/Swift (0.1.0)
 
 DEPENDENCIES:
@@ -11,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AKStability: ab6465de437bb8528f4ffd7e69205b56af5aded0
+  AKStability: f8ea64180a7066547bb80e34497e601484abda91
 
 PODFILE CHECKSUM: 9e7cc49827b2a68865bd58bfdaec4ce57df729c7
 

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //{target:{observer:{keyPath:count}}}
 @property (nonatomic, strong, readonly) NSMapTable<id, NSMapTable<id, NSMapTable<NSString *, NSNumber *> *> *> *KVOMapTable;
-- (NSString *)KVORelations;
+- (NSString *)kvoRelations;
 
 @end
 

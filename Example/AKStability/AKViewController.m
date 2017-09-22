@@ -28,7 +28,7 @@
     A *a = [A new];
     B *b = [B new];
     [b addObserver:a forKeyPath:@"x" options:NSKeyValueObservingOptionNew context:nil];
-    NSString *s = [AKStabilityKVOProtector.protector KVORelations];
+    NSString *s = [AKStabilityKVOProtector.protector kvoRelations];
     [b AKStability_removeAllObservers];
 }
 

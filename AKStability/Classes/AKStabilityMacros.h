@@ -10,8 +10,8 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef AKStabilityMacro_h
-#define AKStabilityMacro_h
+#ifndef AKStabilityMacros_h
+#define AKStabilityMacros_h
 
 //************************************************************
 //Note: 用于定义全局宏方法
@@ -47,6 +47,6 @@
         }];\
     }
 
-#endif /* AKStabilityMacro_h */
+#endif /* AKStabilityMacros_h */
 
 #endif /* __OBJC__ */
