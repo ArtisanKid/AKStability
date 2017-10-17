@@ -6,10 +6,6 @@
 //
 //
 
-#ifdef __OBJC__
-
-#import <Foundation/Foundation.h>
-
 #ifndef AKStabilityMacros_h
 #define AKStabilityMacros_h
 
@@ -19,7 +15,12 @@
 //************************************************************
 
 #if DEBUG
-    #define AKStability_Log(_Format, ...) NSLog((@"\n[File:%s]\n[Line:%d]\n[Function:%s]\n" _Format @"\n"), __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__);
+    #define AKStability_Log(_Format, ...)\
+    do {\
+        NSString *file = [NSString stringWithUTF8String:__FILE__].lastPathComponent;\
+        NSLog((@"\n[%@][%d][%s]\n" _Format), file, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__);\
+        printf("\n");\
+    } while(0)
 #else
     #define AKStability_Log(_Format, ...)
 #endif
@@ -47,6 +48,14 @@
         }];\
     }
 
-#endif /* AKStabilityMacros_h */
+#ifdef __cplusplus
+    #define AKStability_EXTERN        extern "C" __attribute__((visibility ("default")))
+#else
+    #define AKStability_EXTERN        extern __attribute__((visibility ("default")))
+#endif
 
-#endif /* __OBJC__ */
+#define AKStability_STATIC_INLINE     static inline
+
+#define AKStability_CONSTRUCTOR       __attribute__((constructor))
+
+#endif /* AKStabilityMacros_h */

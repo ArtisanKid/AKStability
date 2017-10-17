@@ -12,9 +12,10 @@
 
 @implementation NSObject (AKStability)
 
-static __attribute__((constructor)) void AKStability_hookObjectKVO() {
+__attribute__((constructor))
+static void AKStability_hookObjectKVO() {
     Class NSObjectClass = [NSObject class];
-    
+
     Method ori_method = class_getInstanceMethod(NSObjectClass, @selector(addObserver:forKeyPath:options:context:));
     Method hook_method = class_getInstanceMethod(NSObjectClass, @selector(AKStability_addObserver:forKeyPath:options:context:));
     method_exchangeImplementations(ori_method, hook_method);
@@ -22,7 +23,7 @@ static __attribute__((constructor)) void AKStability_hookObjectKVO() {
     ori_method = class_getInstanceMethod(NSObjectClass, @selector(removeObserver:forKeyPath:context:));
     hook_method = class_getInstanceMethod(NSObjectClass, @selector(AKStability_removeObserver:forKeyPath:context:));
     method_exchangeImplementations(ori_method, hook_method);
-    
+
     ori_method = class_getInstanceMethod(NSObjectClass, @selector(removeObserver:forKeyPath:));
     hook_method = class_getInstanceMethod(NSObjectClass, @selector(AKStability_removeObserver:forKeyPath:));
     method_exchangeImplementations(ori_method, hook_method);

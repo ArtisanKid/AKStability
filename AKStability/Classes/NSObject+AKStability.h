@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (AKStability)<NSCopying>
+@interface NSObject (AKStability)
 
 - (void)AKStability_removeAllObservers;
 
